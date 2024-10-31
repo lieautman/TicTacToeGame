@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TTTGame/static/css/main.8b85f09b.css",
-    "main.js": "/TTTGame/static/js/main.f386a7cb.js",
+    "main.css": "/TTTGame/static/css/main.c7d6a025.css",
+    "main.js": "/TTTGame/static/js/main.f6edfde9.js",
     "index.html": "/TTTGame/index.html",
-    "main.8b85f09b.css.map": "/TTTGame/static/css/main.8b85f09b.css.map",
-    "main.f386a7cb.js.map": "/TTTGame/static/js/main.f386a7cb.js.map"
+    "main.c7d6a025.css.map": "/TTTGame/static/css/main.c7d6a025.css.map",
+    "main.f6edfde9.js.map": "/TTTGame/static/js/main.f6edfde9.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b85f09b.css",
-    "static/js/main.f386a7cb.js"
+    "static/css/main.c7d6a025.css",
+    "static/js/main.f6edfde9.js"
   ]
 }
