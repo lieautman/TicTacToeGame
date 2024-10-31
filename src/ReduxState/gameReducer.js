@@ -29,6 +29,7 @@ export const gameSlice = createSlice({
       state.Moves = action.payload;
     },
     drawGame: (state) => {
+      state.PlayerTurn = !state.PlayerTurn;
       state.Moves = [null, null, null, null, null, null, null, null, null];
     }
   }

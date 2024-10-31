@@ -36,7 +36,9 @@ function Player({ playerNo }) {
   };
 
   const isItADraw = (Moves) => {
-    Moves.some((element) => element !== null);
+    return !Moves.some((element) => {
+      return element === null;
+    });
   };
 
   async function sleep(msec) {
