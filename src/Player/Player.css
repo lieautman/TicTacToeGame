@@ -17,9 +17,18 @@ h1 {
   text-align: center;
 }
 
-.box {
+.CheckerBox {
+  display: flex;
   background: rgb(60, 60, 60);
-  height: 5vh;
-  width: 5vw;
-  margin: auto;
+  height: 11.3vh;
+  width: 11.4vw;
+  margin: 0.2vh;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.TextInCheckerBox {
+  color: orange;
+  font-size: calc(2vw + 2vh);
 }
