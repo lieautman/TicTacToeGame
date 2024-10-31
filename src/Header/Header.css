@@ -1,0 +1,17 @@
+.HeaderBackground {
+  background: rgb(26, 26, 26);
+  height: 15vh;
+  margin-bottom: 0.2vh;
+}
+
+h2.player {
+  color: white;
+  text-align: center;
+}
+
+
+h2.score {
+  color: white;
+  float: right;
+  margin: 1vw;
+}
