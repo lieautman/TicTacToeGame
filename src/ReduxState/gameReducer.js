@@ -27,10 +27,13 @@ export const gameSlice = createSlice({
     passTurn: (state, action) => {
       state.PlayerTurn = !state.PlayerTurn;
       state.Moves = action.payload;
+    },
+    drawGame: (state) => {
+      state.Moves = [null, null, null, null, null, null, null, null, null];
     }
   }
 });
-export const { resetGame, playerWin, playerResetAfterWin, passTurn } =
+export const { resetGame, playerWin, playerResetAfterWin, passTurn, drawGame } =
   gameSlice.actions;
 
 export default gameSlice.reducer;

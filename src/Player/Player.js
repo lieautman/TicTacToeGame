@@ -4,7 +4,8 @@ import Grid from "@mui/material/Grid";
 import {
   playerWin,
   playerResetAfterWin,
-  passTurn
+  passTurn,
+  drawGame
 } from "../ReduxState/gameReducer";
 import { toast } from "react-toastify";
 
@@ -34,6 +35,10 @@ function Player({ playerNo }) {
     return false;
   };
 
+  const isItADraw = (Moves) => {
+    Moves.some((element) => element !== null);
+  };
+
   async function sleep(msec) {
     return new Promise((resolve) => setTimeout(resolve, msec));
   }
@@ -47,13 +52,17 @@ function Player({ playerNo }) {
       } else {
         let newMoves = [...Moves];
         newMoves[id] = playerNo === false ? 0 : 1;
-        if (didIWin(newMoves)) {
-          notify(`Player ${playerNo ? "2" : "1"} won! GG!`);
-          dispatch(playerWin(newMoves));
-          await sleep(2000);
-          dispatch(playerResetAfterWin(playerNo));
+        if (isItADraw(newMoves)) {
+          dispatch(drawGame(newMoves));
         } else {
-          dispatch(passTurn(newMoves));
+          if (didIWin(newMoves)) {
+            notify(`Player ${playerNo ? "2" : "1"} won! GG!`);
+            dispatch(playerWin(newMoves));
+            await sleep(2000);
+            dispatch(playerResetAfterWin(playerNo));
+          } else {
+            dispatch(passTurn(newMoves));
+          }
         }
       }
     }
