@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TTTGame/static/css/main.8b85f09b.css",
+    "main.js": "/TTTGame/static/js/main.f386a7cb.js",
+    "index.html": "/TTTGame/index.html",
+    "main.8b85f09b.css.map": "/TTTGame/static/css/main.8b85f09b.css.map",
+    "main.f386a7cb.js.map": "/TTTGame/static/js/main.f386a7cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b85f09b.css",
+    "static/js/main.f386a7cb.js"
+  ]
+}
