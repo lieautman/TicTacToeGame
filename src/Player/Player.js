@@ -1,20 +1,28 @@
 import "./Player.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
+import { playerWin } from "../ReduxState/gameReducer";
 
 function Player({ playerNo }) {
   const PlayerTurn = useSelector((state) => state.gameState.PlayerTurn);
   const Moves = useSelector((state) => state.gameState.Moves);
+  const dispatch = useDispatch();
+  console.log("ceva", PlayerTurn);
+  const didIWin = (Moves) => {
+    return false;
+  };
+
   const score = (move, id) => {
     if (PlayerTurn !== playerNo) {
       console.error("Not your turn"); //to be made into toast
+    } else {
+      if (didIWin(Moves)) dispatch(playerWin(playerNo));
     }
-    console.log("ceva", move, id);
   };
   return (
     <div
       className="PlayerBackground"
-      style={{ float: playerNo === 1 ? "right" : "left" }}
+      style={{ float: playerNo === true ? "right" : "left" }}
     >
       <h1>
         {PlayerTurn === playerNo ? "Your turn!" : "Wait for your oponent!"}

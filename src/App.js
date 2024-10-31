@@ -9,8 +9,8 @@ function App() {
     <div className="background">
       <Provider store={reduxStore}>
         <Header></Header>
-        <Player playerNo={0}></Player>
-        <Player playerNo={1}></Player>
+        <Player playerNo={false}></Player>
+        <Player playerNo={true}></Player>
       </Provider>
     </div>
   );
