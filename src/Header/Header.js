@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import "./Header.css";
 import Grid from "@mui/material/Grid";
 import { resetGame } from "../ReduxState/gameReducer";
+import { toast } from "react-toastify";
 
 function Header() {
   const ScorePlayer1 = useSelector((state) => state.gameState.ScorePlayer1);
   const ScorePlayer2 = useSelector((state) => state.gameState.ScorePlayer2);
   const dispatch = useDispatch();
+  const notify = (text) => toast(text);
 
   return (
     <div className="HeaderBackground">
@@ -26,7 +28,10 @@ function Header() {
               <Button
                 variant="contained"
                 sx={{ margin: "1vw" }}
-                onClick={() => dispatch(resetGame())}
+                onClick={() => {
+                  dispatch(resetGame());
+                  notify("Game has been reset!");
+                }}
               >
                 Reset
               </Button>
