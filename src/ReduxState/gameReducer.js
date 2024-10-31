@@ -6,7 +6,7 @@ export const gameSlice = createSlice({
     ScorePlayer1: 0,
     ScorePlayer2: 0,
     PlayerTurn: false,
-    Moves: [null, 0, 1, null, null, null, 1, 0, 1]
+    Moves: [null, null, null, null, null, null, null, null, null]
   },
   reducers: {
     resetGame: (state) => {
@@ -16,6 +16,9 @@ export const gameSlice = createSlice({
       state.Moves = [null, null, null, null, null, null, null, null, null];
     },
     playerWin: (state, action) => {
+      state.Moves = action.payload;
+    },
+    playerResetAfterWin: (state, action) => {
       if (action.payload) state.ScorePlayer2 = state.ScorePlayer2 + 1;
       else state.ScorePlayer1 = state.ScorePlayer1 + 1;
       state.PlayerTurn = !action.payload;
@@ -27,6 +30,7 @@ export const gameSlice = createSlice({
     }
   }
 });
-export const { resetGame, playerWin, passTurn } = gameSlice.actions;
+export const { resetGame, playerWin, playerResetAfterWin, passTurn } =
+  gameSlice.actions;
 
 export default gameSlice.reducer;

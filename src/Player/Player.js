@@ -1,7 +1,11 @@
 import "./Player.css";
 import { useSelector, useDispatch } from "react-redux";
 import Grid from "@mui/material/Grid";
-import { playerWin, passTurn } from "../ReduxState/gameReducer";
+import {
+  playerWin,
+  playerResetAfterWin,
+  passTurn
+} from "../ReduxState/gameReducer";
 import { toast } from "react-toastify";
 
 function Player({ playerNo }) {
@@ -45,8 +49,9 @@ function Player({ playerNo }) {
         newMoves[id] = playerNo === false ? 0 : 1;
         if (didIWin(newMoves)) {
           notify(`Player ${playerNo ? "2" : "1"} won! GG!`);
+          dispatch(playerWin(newMoves));
           await sleep(2000);
-          dispatch(playerWin(playerNo));
+          dispatch(playerResetAfterWin(playerNo));
         } else {
           dispatch(passTurn(newMoves));
         }
