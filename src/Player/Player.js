@@ -5,7 +5,9 @@ import Grid from "@mui/material/Grid";
 function Player({ playerNo }) {
   const PlayerTrun = useSelector((state) => state.gameState.PlayerTurn);
   const Moves = useSelector((state) => state.gameState.Moves);
-
+  const score = (move, id) => {
+    console.log("ceva", move, id);
+  };
   return (
     <div
       className="PlayerBackground"
@@ -16,10 +18,10 @@ function Player({ playerNo }) {
       </h1>
       <div className="PlayerBox">
         <Grid container>
-          {Moves.map((move) => {
+          {Moves.map((move, id) => {
             return (
-              <Grid item xs={4}>
-                <div className="CheckerBox" onClick={() => score()}>
+              <Grid key={id} item xs={4}>
+                <div className="CheckerBox" onClick={() => score(move, id)}>
                   <div className="TextInCheckerBox">
                     {move === 1 ? "x" : move === 0 ? "o" : ""}
                   </div>
