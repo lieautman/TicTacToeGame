@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/TTTGame/static/css/main.c7d6a025.css",
-    "main.js": "/TTTGame/static/js/main.f6edfde9.js",
-    "index.html": "/TTTGame/index.html",
-    "main.c7d6a025.css.map": "/TTTGame/static/css/main.c7d6a025.css.map",
-    "main.f6edfde9.js.map": "/TTTGame/static/js/main.f6edfde9.js.map"
+    "main.css": "/TicTacToeGame/static/css/main.c7d6a025.css",
+    "main.js": "/TicTacToeGame/static/js/main.f6edfde9.js",
+    "index.html": "/TicTacToeGame/index.html",
+    "main.c7d6a025.css.map": "/TicTacToeGame/static/css/main.c7d6a025.css.map",
+    "main.f6edfde9.js.map": "/TicTacToeGame/static/js/main.f6edfde9.js.map"
   },
   "entrypoints": [
     "static/css/main.c7d6a025.css",
