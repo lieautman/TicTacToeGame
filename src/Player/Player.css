@@ -16,3 +16,10 @@ h1 {
   color: orange;
   text-align: center;
 }
+
+.box {
+  background: rgb(60, 60, 60);
+  height: 5vh;
+  width: 5vw;
+  margin: auto;
+}

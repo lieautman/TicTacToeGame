@@ -1,19 +1,23 @@
 import "./Player.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Player({ playerNo }) {
   const PlayerTrun = useSelector((state) => state.gameState.PlayerTurn);
   const Moves = useSelector((state) => state.gameState.Moves);
-
+  console.log("ceva", Moves);
   return (
     <div
-      class="PlayerBackground"
+      className="PlayerBackground"
       style={{ float: playerNo === 1 ? "right" : "left" }}
     >
       <h1>
         {PlayerTrun === playerNo ? "Your turn!" : "Wait for your oponent!"}
       </h1>
-      <div class="PlayerBox"></div>
+      <div className="PlayerBox">
+        {Moves.forEach((move) => {
+          <div className="box"></div>;
+        })}
+      </div>
     </div>
   );
 }
