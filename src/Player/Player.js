@@ -3,9 +3,12 @@ import { useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 
 function Player({ playerNo }) {
-  const PlayerTrun = useSelector((state) => state.gameState.PlayerTurn);
+  const PlayerTurn = useSelector((state) => state.gameState.PlayerTurn);
   const Moves = useSelector((state) => state.gameState.Moves);
   const score = (move, id) => {
+    if (PlayerTurn !== playerNo) {
+      console.error("Not your turn"); //to be made into toast
+    }
     console.log("ceva", move, id);
   };
   return (
@@ -14,7 +17,7 @@ function Player({ playerNo }) {
       style={{ float: playerNo === 1 ? "right" : "left" }}
     >
       <h1>
-        {PlayerTrun === playerNo ? "Your turn!" : "Wait for your oponent!"}
+        {PlayerTurn === playerNo ? "Your turn!" : "Wait for your oponent!"}
       </h1>
       <div className="PlayerBox">
         <Grid container>
