@@ -11,7 +11,23 @@ function Player({ playerNo }) {
   const dispatch = useDispatch();
 
   const didIWin = (Moves) => {
-    return true;
+    if (Moves[0] === Moves[1] && Moves[1] === Moves[2] && Moves[0] !== null)
+      return true;
+    if (Moves[3] === Moves[4] && Moves[4] === Moves[5] && Moves[3] !== null)
+      return true;
+    if (Moves[6] === Moves[7] && Moves[7] === Moves[8] && Moves[6] !== null)
+      return true;
+    if (Moves[0] === Moves[4] && Moves[4] === Moves[8] && Moves[0] !== null)
+      return true;
+    if (Moves[2] === Moves[4] && Moves[4] === Moves[6] && Moves[2] !== null)
+      return true;
+    if (Moves[0] === Moves[3] && Moves[3] === Moves[6] && Moves[0] !== null)
+      return true;
+    if (Moves[1] === Moves[4] && Moves[4] === Moves[7] && Moves[1] !== null)
+      return true;
+    if (Moves[2] === Moves[5] && Moves[5] === Moves[8] && Moves[2] !== null)
+      return true;
+    return false;
   };
 
   async function sleep(msec) {
@@ -20,10 +36,10 @@ function Player({ playerNo }) {
 
   const score = async (move, id) => {
     if (PlayerTurn !== playerNo) {
-      notify("Not your turn!"); //to be made into toast
+      notify("Not your turn!");
     } else {
       if (Moves[id] !== null) {
-        notify("Square already used!"); //to be made into toast
+        notify("Square already used!");
       } else {
         let newMoves = [...Moves];
         newMoves[id] = playerNo === false ? 0 : 1;
