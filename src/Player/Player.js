@@ -55,6 +55,9 @@ function Player({ playerNo }) {
         let newMoves = [...Moves];
         newMoves[id] = playerNo === false ? 0 : 1;
         if (isItADraw(newMoves)) {
+          notify("It is a draw!");
+          dispatch(passTurn(newMoves));
+          await sleep(2000);
           dispatch(drawGame(newMoves));
         } else {
           if (didIWin(newMoves)) {
